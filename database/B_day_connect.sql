@@ -84,3 +84,4 @@ primary key (id_contacto, id_gustos),
 foreign key (id_contacto) references contactos(id_contacto),
 foreign key (id_gustos) references gustos(id_gustos)
 );
+
