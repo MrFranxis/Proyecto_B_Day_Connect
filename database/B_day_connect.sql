@@ -33,7 +33,54 @@ values(
 '1989-12-31'
 );
 
-select u.nombre, r.nombre_rol as Permiso from usuarios u
-join roles r on u.id_rol = r.id_rol
-where r.nombre_rol = 'admin';
+use b_day_connect;
 
+select*from usuarios;
+
+
+create table categorias (
+id_categoria int auto_increment primary key,
+nombre_categoria varchar (100) not null
+);
+
+insert into categorias (nombre_categoria)
+values ('familia'), ('amigos'), ('pareja'), ('trabajo'), ('conocidos');
+
+select*from categorias;
+
+create table gustos(
+id_gustos int auto_increment primary key,
+nombre_gusto varchar (100) not null
+);
+
+insert into gustos (nombre_gusto)
+values ('cine'),('videojuegos'),('arte'),('lectura'),('musica'),('viajar');
+
+
+create table contactos(
+id_contacto int auto_increment primary key,
+id_usuario int not null,
+nombre varchar(100),
+email varchar(100),
+telefono varchar(20),
+fecha_nacimiento date,
+fecha_registro datetime default current_timestamp,
+foreign key (id_usuario) references usuarios(id_usuario)
+);
+
+create table contacto_categoria(
+id_contacto  int not null,
+id_categoria  int not null,
+primary key (id_contacto, id_categoria),
+foreign key (id_contacto) references contactos(id_contacto),
+foreign key (id_categoria) references categorias(id_categoria)
+);
+
+
+create table contacto_gustos(
+id_contacto int not null,
+id_gustos int not null,
+primary key (id_contacto, id_gustos),
+foreign key (id_contacto) references contactos(id_contacto),
+foreign key (id_gustos) references gustos(id_gustos)
+);
