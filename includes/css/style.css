@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #B3E5FC 0%, #F8BBD0 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    background-color: #FFF8F9;
+    padding: 2rem, 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+}
+
+h1, h2{
+    color: #607D8B;
+    margin-bottom: 1rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin: 15px;
+}
+
+input, select, button{
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+input, select{
+    background-color: #E3F2FD;
+}
+
+button{
+background-color: linear-gradient(90def,#B3E5FC, #F8BBD0);
+color: #333;
+font-weight: bold;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #F8BBD0, #B3E5FC);
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #E1BEE7;
+}
+
+tr:nth-child(even) {
+  background-color: #F3E5F5;
+}
+
+a{
+    color:#1976D2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #90CAF9;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+
+}
+
+.logout:hover{
+      background-color: #64B5F6;
+
+}
