@@ -1,0 +1,171 @@
+/* ====== ESTILO GENERAL ====== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #f7d8f0, #d8e9ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+  padding: 40px 0;
+  color: #333;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.admin-container {
+  background-color: #fff;
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+h1 {
+  color: #5962c0;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+/* ====== MENÚ DE ADMIN ====== */
+.admin-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.admin-menu button {
+  background: linear-gradient(135deg, #a0bfff, #d2bfff);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-menu button:hover {
+  background: linear-gradient(135deg, #8ca8ff, #c6a7ff);
+  transform: scale(1.05);
+}
+
+.admin-menu button.activo {
+  background: linear-gradient(135deg, #88c0f8, #d891f8);
+}
+
+
+.tabla-dinamica {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #e9ccf5;
+  color: #333;
+}
+
+th, td {
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fdf5ff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f2ff;
+}
+
+tbody tr:hover {
+  background-color: #f2e3ff;
+  transition: 0.2s;
+}
+
+/* ====== BOTONES DE ACCIÓN ====== */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 6px 12px;
+  margin: 3px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn.ascender {
+  background-color: #84b9ff;
+}
+
+.btn.degradar {
+  background-color: #f5a8d2;
+}
+
+.btn.eliminar {
+  background-color: #f07777;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* ====== BOTÓN DE CERRAR SESIÓN ====== */
+.logout {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 30px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8288e5, #c591e8);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.logout:hover {
+  background: linear-gradient(135deg, #6f78db, #b47de0);
+  transform: translateY(-2px);
+}
+
+/* ====== EFECTOS ADICIONALES ====== */
+.info {
+  font-style: italic;
+  color: #777;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 20px;
+  }
+
+  table th, table td {
+    font-size: 0.8rem;
+  }
+
+  .admin-menu button {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
