@@ -22,9 +22,9 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
             if($user["id_rol"]== 1){
                 header("Location: ../admin/home_admin.php");
             }else{
-                header("Location: ../user/home_user.php");
+                header("Location: ../user/user.php");
             }
-            exit; 
+            exit;
 
         }else{
             echo "<script>alert('Contraseña incorrecta'); window.history.back();</script>";

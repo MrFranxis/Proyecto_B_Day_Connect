@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Registro</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body>
     <div class="registro-container">
         <h2>Crear cuenta</h2>
@@ -19,10 +21,25 @@
             <input type="password" name="password" required>
 
             <label>Fecha de nacimiento:</label>
-            <input type="date" name="fecha_nacimiento" required>
+            <input type="text" id="fechaContacto" name="fecha_nacimiento" placeholder="DD/MM/AAAA"
+                pattern="^(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/([1-2][0-9]{3})$" maxlength="10" autocomplete="off">
 
             <button type="submit">Registrarse</button>
         </form>
     </div>
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var fechaInput = document.getElementById('fechaContacto');
+        if (fechaInput) {
+            fechaInput.addEventListener('input', function (e) {
+                let v = fechaInput.value.replace(/[^0-9]/g, '');
+                if (v.length > 2 && v[2] !== '/') v = v.slice(0, 2) + '/' + v.slice(2);
+                if (v.length > 5 && v[5] !== '/') v = v.slice(0, 5) + '/' + v.slice(5);
+                fechaInput.value = v.slice(0, 10);
+            });
+        }
+    });
+</script>
+
 </html>
