@@ -1,4 +1,6 @@
 <?php
+
+//home_admin
 session_start();
 if (!isset($_SESSION["id_usuario"]) || $_SESSION["rol"] != 1) {
     header("Location: ../index.php");
@@ -18,7 +20,6 @@ if (!isset($_SESSION["id_usuario"]) || $_SESSION["rol"] != 1) {
   <h1>🎂 Panel de Administración</h1>
   <p>Bienvenido, <strong><?= htmlspecialchars($_SESSION["nombre"]) ?></strong></p>
 
-  <!-- Menú de opciones -->
   <div class="admin-menu">
     <button data-tipo="todos">👥 Ver Todos</button>
     <button data-tipo="usuario">🙍 Usuarios Normales</button>
@@ -26,7 +27,6 @@ if (!isset($_SESSION["id_usuario"]) || $_SESSION["rol"] != 1) {
     <button id="filtrarFecha">📅 Filtrar por fecha</button>
   </div>
 
-  <!-- Contenedor dinámico -->
   <div id="contenedor-tabla" class="tabla-dinamica">
     <p class="info">Selecciona una opción para ver usuarios.</p>
   </div>
