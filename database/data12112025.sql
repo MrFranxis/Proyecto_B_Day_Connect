@@ -106,10 +106,11 @@ CREATE TABLE `contactos` (
   `telefono` varchar(20) DEFAULT NULL,
   `fecha_nacimiento` date DEFAULT NULL,
   `fecha_registro` datetime DEFAULT current_timestamp(),
+  `apellido` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_contacto`),
   KEY `id_usuario` (`id_usuario`),
   CONSTRAINT `contactos_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,6 +119,7 @@ CREATE TABLE `contactos` (
 
 LOCK TABLES `contactos` WRITE;
 /*!40000 ALTER TABLE `contactos` DISABLE KEYS */;
+INSERT INTO `contactos` VALUES (1,5,'Francisco Javier','pacopaco@tfg.com',NULL,'1989-12-24','2025-11-15 12:56:36','Doña Aguado'),(2,5,'Juan','juanproyecto@tfg.com',NULL,'2025-11-17','2025-11-15 13:08:27','Juan');
 /*!40000 ALTER TABLE `contactos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -188,7 +190,7 @@ CREATE TABLE `usuarios` (
   UNIQUE KEY `email` (`email`),
   KEY `id_rol` (`id_rol`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `roles` (`id_rol`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -197,7 +199,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Juan Cayetano','adminprincipal@tfg.com','$2y$10$dn.gxq0Pvwe5DORaFqQUyeWzyXcY1axH0XjNlgYN1qdzT3dlS37Vu','1989-12-31','2025-11-06 18:40:50',1),(2,'Juan Jose','juanjoproyecto@tfg','$2y$10$M4BmmZU5EXvipJbh9hy7CuNOzm/byvO5h1pf3Wn/eB/jk8A/wk1EW','1989-12-24','2025-11-07 19:49:00',2),(3,'Juan Perez','juanpe@tfg.com','$2y$10$7mZ1.iw19lUhSHh0JSVX4OAsJMmjVNYnXDn0Olu57MJvV4otxCi3i','1990-03-01','2025-11-07 19:52:19',2),(5,'Lucia Ruiz','luciaproyecto@tfg.com','$2y$10$xx5b3h0vDkN6PaBQF9yAluiDj5dnA2f5qHZhTseWVTbD3njtI/23e','1996-07-29','2025-11-08 21:41:56',2),(6,'Paco Paco','pacoproyecto@tfg.com','$2y$10$bMZ5PiGnVP6DSBmRlo2rI.rTc/PC/ZiXuY7bU6ZYuaEJ1e3HZ961u','1990-01-01','2025-11-10 11:15:20',2),(7,'Ajo Blanco','ajoproyecto@tfg.com','$2y$10$joiI3y26BX.WY6LwPBcENeZmd1LNjBjmdAwR7kwa.N3sNWvVXHc1q','2014-06-04','2025-11-12 23:01:31',2);
+INSERT INTO `usuarios` VALUES (1,'Juan Cayetano','adminprincipal@tfg.com','$2y$10$dn.gxq0Pvwe5DORaFqQUyeWzyXcY1axH0XjNlgYN1qdzT3dlS37Vu','1989-12-31','2025-11-06 18:40:50',1),(2,'Juan Jose','juanjoproyecto@tfg','$2y$10$M4BmmZU5EXvipJbh9hy7CuNOzm/byvO5h1pf3Wn/eB/jk8A/wk1EW','1989-12-24','2025-11-07 19:49:00',2),(3,'Juan Perez','juanpe@tfg.com','$2y$10$7mZ1.iw19lUhSHh0JSVX4OAsJMmjVNYnXDn0Olu57MJvV4otxCi3i','1990-03-01','2025-11-07 19:52:19',2),(5,'Lucia Ruiz','luciaproyecto@tfg.com','$2y$10$xx5b3h0vDkN6PaBQF9yAluiDj5dnA2f5qHZhTseWVTbD3njtI/23e','1996-07-29','2025-11-08 21:41:56',2),(8,'Francisco Javier','pacopaco@tfg.com','$2y$10$R1Xeeev4DQFDzxZSPvNbM.IznZQP50C.7ZLbKbgjEaOahJ/pEVonm','0000-00-00','2025-11-15 13:13:46',2);
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -210,6 +212,7 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+<<<<<<< HEAD
 -- Dump completed on 2025-11-12 23:10:52
 
 -- MySQL dump 10.13  Distrib 8.0.43, for Win64 (x86_64)
@@ -425,3 +428,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2025-11-12 23:10:52
+=======
+-- Dump completed on 2025-11-15 14:14:07
+>>>>>>> c9a44ca (Se unifican  ramas, se actualiza dump)
