@@ -186,6 +186,8 @@ CREATE TABLE `usuarios` (
   `fecha_nacimiento` date NOT NULL,
   `fecha_registro` datetime DEFAULT current_timestamp(),
   `id_rol` int(11) NOT NULL,
+  `estado` varchar(20) NOT NULL DEFAULT 'activo',
+  `reset_required` tinyint(1) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`),
   KEY `id_rol` (`id_rol`),
