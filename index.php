@@ -20,8 +20,11 @@
 
             <button type="submit">Iniciar Sesion</button>
 
+            <p><a href="includes/html/recuperar_password.html">¿Has olvidado la contraseña?</a></p>
+    
             <p>¿Aun no tines cuenta?</p>
             <a href="includes/html/registro.html">Registrate aqui</a>
+
 
         </form>
     

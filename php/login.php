@@ -1,3 +1,4 @@
+
 <?php
 
 session_start();
@@ -15,6 +16,10 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         $user = $stmt-> fetch(PDO::FETCH_ASSOC);
 
         if(password_verify($password,$user["password"])){
+            if (isset($user["estado"]) && $user["estado"] === "bloqueado") {
+                echo "<script>alert('Usuario bloqueado'); window.history.back();</script>";
+                exit;
+            }
             $_SESSION["id_usuario"] = $user["id_usuario"];
             $_SESSION["nombre"] = $user["nombre"];
             $_SESSION["rol"] = $user["id_rol"];
@@ -22,9 +27,9 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
             if($user["id_rol"]== 1){
                 header("Location: ../admin/home_admin.php");
             }else{
-                header("Location: ../user/home_user.php");
+                header("Location: ../user/user.php");
             }
-            exit; 
+            exit;
 
         }else{
             echo "<script>alert('Contraseña incorrecta'); window.history.back();</script>";
@@ -35,6 +40,7 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         }
 
 }
+
 
 
 ?>

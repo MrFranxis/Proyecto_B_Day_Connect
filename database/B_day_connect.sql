@@ -21,6 +21,8 @@ create table usuarios(
     fecha_nacimiento date not null,
     fecha_registro  datetime default CURRENT_TIMESTAMP,
     id_rol int not null,
+    estado varchar(20) not null default 'activo',
+    reset_required tinyint(1) not null default 0,
     foreign key (id_rol)references roles(id_rol)
 );
 

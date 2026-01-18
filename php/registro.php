@@ -1,20 +1,20 @@
 <?php
 require_once("conexion.php");
 
-// Verificar si se envió el formulario
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombre = trim($_POST["nombre"]);
     $email = trim($_POST["email"]);
     $password = trim($_POST["password"]);
     $fecha_nacimiento = $_POST["fecha_nacimiento"];
 
-    // Encriptar la contraseña
+ 
     $hash_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Rol por defecto: usuario normal (id_rol = 2)
+    
     $id_rol = 2;
 
-    // Preparar la consulta
+   
     $sql = "INSERT INTO usuarios (nombre, email, password, id_rol, fecha_nacimiento, fecha_registro)
             VALUES (:nombre, :email, :password, :id_rol, :fecha_nacimiento, NOW())";
 
