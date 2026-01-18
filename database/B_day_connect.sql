@@ -1,4 +1,5 @@
-create database B_Day_Connect;
+create database if not exists B_Day_Connect;
+
 
 use B_day_connect;
 
