@@ -16,6 +16,10 @@ if($_SERVER["REQUEST_METHOD"]==="POST"){
         $user = $stmt-> fetch(PDO::FETCH_ASSOC);
 
         if(password_verify($password,$user["password"])){
+            if (isset($user["estado"]) && $user["estado"] === "bloqueado") {
+                echo "<script>alert('Usuario bloqueado'); window.history.back();</script>";
+                exit;
+            }
             $_SESSION["id_usuario"] = $user["id_usuario"];
             $_SESSION["nombre"] = $user["nombre"];
             $_SESSION["rol"] = $user["id_rol"];

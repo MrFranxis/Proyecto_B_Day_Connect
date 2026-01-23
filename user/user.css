@@ -316,6 +316,10 @@ button.action-btn:disabled {
     color: #607D8B !important;
 }
 
+.fa-bell {
+    color: #ff9800 !important;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -549,6 +553,115 @@ nav {
     padding: 10px;
     border-radius: 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.idea-gusto {
+    font-size: 0.85rem;
+    color: #607D8B;
+    margin-top: 4px;
+}
+
+.notificaciones-actions {
+    margin: 12px 0;
+}
+
+.notificaciones-list {
+    display: grid;
+    gap: 12px;
+}
+
+.notificacion-item {
+    background: #FFF8F9;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.notificacion-item h4 {
+    margin: 0 0 6px 0;
+}
+
+.notificacion-meta {
+    font-size: 0.85rem;
+    color: #607D8B;
+    margin-top: 6px;
+}
+
+.regalo-range {
+    position: relative;
+    height: 36px;
+    margin-top: 6px;
+    width: 100%;
+    max-width: 360px;
+    overflow: hidden;
+}
+
+.regalo-range input[type="range"] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: transparent;
+    pointer-events: auto;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+#regaloPrecioMax {
+    z-index: 1;
+    pointer-events: none;
+}
+
+#regaloPrecioMax::-webkit-slider-thumb {
+    pointer-events: auto;
+}
+
+#regaloPrecioMax::-moz-range-thumb {
+    pointer-events: auto;
+}
+
+#regaloPrecioMin {
+    z-index: 2;
+}
+
+.regalo-range-wrap {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.regalo-range input[type="range"]::-webkit-slider-runnable-track {
+    height: 6px;
+    background: #e6e6e6;
+    border-radius: 6px;
+}
+
+.regalo-range input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1976D2;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+.regalo-range input[type="range"]::-moz-range-track {
+    height: 6px;
+    background: #e6e6e6;
+    border-radius: 6px;
+}
+
+.regalo-range input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #1976D2;
+    cursor: pointer;
+    border: none;
 }
 
 .info {
